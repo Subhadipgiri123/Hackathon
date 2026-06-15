@@ -1,17 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <h1>Hello, world!
-    </h1>
-    <h1>Future Minds</h1><br>
-    <h1>hii </h1>
-    <h2>CCLMS</h2>
-    <b>Hello</b>
-</body>
-</html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SecurePortal - Sign In</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#131b2e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "primary-container": "#0052ff",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-primary": "#b7c4ff",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-dim": "#d2d9f4",
+                        "on-primary-fixed": "#001452",
+                        "on-primary-container": "#dfe3ff",
+                        "on-tertiary-fixed-variant": "#891e00",
+                        "outline": "#737688",
+                        "inverse-on-surface": "#eef0ff",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-variant": "#dae2fd",
+                        "on-tertiary-fixed": "#3c0800",
+                        "surface": "#faf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-container": "#ffddd5",
+                        "tertiary-container": "#bf3003",
+                        "surface-container": "#eaedff",
+                        "tertiary": "#952200",
+                        "surface-bright": "#faf8ff",
+                        "outline-variant": "#c3c5d9",
+                        "inverse-surface": "#283044",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434656",
+                        "tertiary-fixed": "#ffdbd2",
+                        "background": "#faf8ff",
+                        "surface-tint": "#004ced",
+                        "secondary": "#505f76",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f3ff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "error-container": "#ffdad6",
+                        "on-background": "#131b2e",
+                        "surface-container-highest": "#dae2fd",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dde1ff",
+                        "primary": "#003ec7",
+                        "on-secondary-container": "#54647a",
+                        "tertiary-fixed-dim": "#ffb4a1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "container-margin": "24px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "touch-target-min": "48px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .tonal-layer {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+        }
+        .primary-shadow {
+            box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col items-center">
+<!-- TopAppBar Shell (Suppressed for focused Login, but keeping brand logic) -->
+<header class="bg-surface w-full max-w-[430px] flex items-center justify-center px-container-margin h-touch-target-min sticky top-0 z-50">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">SecurePortal</span>
+</div>
+</header>
+<main class="w-full max-w-[430px] px-container-margin py-xl flex-grow flex flex-col justify-center">
+<!-- Identity Header -->
+<div class="text-center mb-xl">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary-container/10 text-primary-container mb-md">
+<span class="material-symbols-outlined !text-[32px]" data-icon="lock_open" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock_open</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Welcome Back</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Access your secure dashboard to manage your protected assets.</p>
+</div>
+<!-- Login Form -->
+<form class="space-y-md" onsubmit="return false;">
+<!-- Email Field -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface font-semibold ml-1" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-[52px] pl-11 pr-md tonal-layer rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary-container outline-none transition-all placeholder:text-outline-variant font-body-md" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface font-semibold ml-1" for="password">Password</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="w-full h-[52px] pl-11 pr-12 tonal-layer rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary-container outline-none transition-all placeholder:text-outline-variant font-body-md" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-md flex items-center text-outline hover:text-on-surface-variant transition-colors" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password -->
+<div class="flex justify-end">
+<a class="text-primary font-label-md text-label-md font-semibold hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<!-- Primary Sign In -->
+<button class="w-full h-[52px] bg-primary-container text-on-primary-container font-label-md text-label-md font-bold rounded-lg primary-shadow active:scale-[0.98] transition-transform duration-100 flex items-center justify-center gap-xs mt-lg">
+                Sign In
+                <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Social Divider -->
+<div class="flex items-center gap-md py-md">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="text-outline font-label-sm text-label-sm uppercase tracking-wider">or continue with</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-md">
+<button class="h-[52px] tonal-layer flex items-center justify-center gap-xs rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px] text-[#4285F4]" data-icon="google" data-weight="fill" style="font-variation-settings: 'FILL' 1;">google</span>
+                    Google
+                </button>
+<button class="h-[52px] tonal-layer flex items-center justify-center gap-xs rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-icon="apple" data-weight="fill" style="font-variation-settings: 'FILL' 1;">apps</span>
+                    Apple
+                </button>
+</div>
+</form>
+<!-- Secondary Sign Up Link -->
+<div class="mt-2xl text-center">
+<p class="font-body-md text-on-surface-variant">
+                Don't have an account? 
+                <a class="text-primary font-semibold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</div>
+</main>
+<!-- Bottom Navigation (Filtered: Suppressed for Transactional flow per rules) -->
+<!-- Showing a help link instead for user support at bottom -->
+<footer class="w-full max-w-[430px] px-container-margin py-lg flex justify-center border-t border-outline-variant/10">
+<a class="flex items-center gap-xs text-outline font-label-sm text-label-sm hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_outline">help_outline</span>
+            Need assistance? Contact Security Support
+        </a>
+</footer>
+<script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('password-toggle-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.innerText = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.innerText = 'visibility';
+            }
+        }
+    </script>
+</body></html>
